@@ -11,6 +11,7 @@ def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'ThisIsASimpleSecretKey'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:password@localhost/foodexpress'
+    #app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     db.init_app(app)
 
     from .views import views
@@ -19,7 +20,8 @@ def create_app():
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
 
-    from .models import User, Note
+    from .models import User,Chef,Health_Expert, Delivery,Employee,\
+        Expert_User_Report,Menu,Order,Payment,User_Health_Report,User_Taste_Form, Login
 
     create_database(app)
 
@@ -35,6 +37,7 @@ def create_app():
 
 
 def create_database(app):
-    if not path.exists('website/' + DB_NAME):
+    if not path.exists('localhost:3306' + DB_NAME):
         db.create_all(app=app)
         print('Created Database!')
+
