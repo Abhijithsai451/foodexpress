@@ -19,7 +19,7 @@ class User(db.Model):
 
 
 
-class Health_Expert(db.model):
+class Health_Expert(db.Model):
     health_expert_id =db.Column(db.integer,primary_key=True)
     he_first_name = db.Column(db.String(10000))
     he_last_name = db.Column(db.String(10000))
@@ -30,7 +30,7 @@ class Health_Expert(db.model):
     he_email = db.Column(db.String(10000))
 
 
-class Health_Report(db.model):
+class Health_Report(db.Model):
     status_id = db.Column(db.integer, primary_key =True)
     user_bp_level =db.Column(db.float)
     user_height =db.Column(db.float)
@@ -41,7 +41,7 @@ class Health_Report(db.model):
     user_body_mass_index = db.Column(db.float)
     user_id = db.Column(db.integer, db.ForeignKey('user.user_id'))
 
-class Expert_User (db.model)
+class Expert_User (db.Model):
     exp_rep_id = db.Column(db.integer, primary_key =True)
     req_vitamins= db.Column(db.float)
     req_calories = db.Column(db.datetime.date())
@@ -51,7 +51,7 @@ class Expert_User (db.model)
     req_sugar_levels = db.Column(db.integer)
     health_expert_id =db.Column(db.integer, db.ForeignKey('user.health_expert_id'))
 
-class chef(db.model)
+class chef(db.Model):
     ch_id =db.Column(db.integer, primary_key =True)
     ch_first_name=db.Column(db.String(10000))
     ch_last_name = db.Column(db.String(10000))
@@ -60,7 +60,7 @@ class chef(db.model)
     ch_email= db.Column(db.String(10000))
     exp_rep_id = db.Column(db.integer, db.ForeignKey('user.exp_rep_id'))
 
-class Employee(db.model)
+class Employee(db.Model):
     emp_id = db.Column(db.integer, primary_key =True)
     emp_first_name= db.Column(db.String(10000))
     emp_last_name = db.Column(db.String(10000))
@@ -68,7 +68,7 @@ class Employee(db.model)
     emp_phone= db.Column(db.integer)
     emp_email = db.Column(db.String(10000))
 
-class Menu(db.model)
+class Menu(db.Model):
     menu_id = db.Column(db.integer, primary_key =True)
     item_name = db.Column(db.String(10000))
     item_id = db.Column(db.String(10000))
@@ -76,7 +76,7 @@ class Menu(db.model)
     item_price = db.Column(db.integer)
     ch_id = db.Column(db.integer, db.ForeignKey('user.ch_id'))
 
-class payment(model)
+class payment(Model):
     p_id = db.Column(db.integer, primary_key =True)
     user_id= db.Column(db.integer)
     name = db.Column(db.String(10000))
@@ -85,14 +85,14 @@ class payment(model)
     card_cvv = db.Column(db.integer)
     or_id = db.Column(db.integer, db.ForeignKey('user.or_id'))
 
-class Order(db.model)
+class Order(db.Model):
     or_id = db.Column(db.integer, primary_key =True)
     or_time = db.Column(db.datetime.date())
     or_cost = db.Column(db.float)
     user_id =db.Column(db.integer, db.ForeignKey('user.or_id'))
     or_id = db.Column(db.integer, db.ForeignKey('user.or_id'))
 
-class Delivery(db.model)
+class Delivery(db.Model):
     de_id =db.Column(db.integer, primary_key =True)
     de_street=db.Column(db.String(10000))
     de_city=db.Column(db.String(10000))
@@ -101,7 +101,7 @@ class Delivery(db.model)
     emp_id =db.Column(db.integer, db.ForeignKey('user.or_id'))
     or_id=db.Column(db.integer, db.ForeignKey('user.or_id'))
 
-class User_Taste(db.model)
+class User_Taste(db.Model):
     user_int_id=db.Column(db.integer, primary_key =True)
     int_cusine=db.Column(db.String(10000))
     int_dish_desc=db.Column(db.String(10000))
