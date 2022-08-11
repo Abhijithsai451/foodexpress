@@ -17,9 +17,12 @@ class User(db.Model):
     user_phone = db.Column(db.Integer)
 
 class Login(db.Model,UserMixin):
-    email_addr = db.Column(db.String(100),unique=True,primary_key =True)
+    id = db.Column(db.Integer, unique =True,primary_key=True)
+    email_addr = db.Column(db.String(100),unique=True,nullable=False)
     first_name = db.Column(db.String(100))
     password = db.Column(db.String(150))
+
+
 
 class Expert_User_Report(db.Model):
     exp_rep_id = db.Column(db.Integer, primary_key =True)
