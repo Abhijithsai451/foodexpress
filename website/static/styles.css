@@ -1,0 +1,19 @@
+.content{
+  padding-top:25px;
+  height:400px;
+  width:1000px;
+}
+.box{
+  float:right;
+  width:40%;
+}
+.image{
+  float:left;
+  margin-top: 25px;
+  width:50%;
+  height:400px;
+  max-width: 70%;
+}
+body{
+    background-color: Gray;
+}

@@ -1,7 +1,19 @@
 {% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
 %}
+<img class='image' src="/static/food.jpeg" style="
+
+"/>
+<div class="content">
+      <div class="box">
+        <h1>Food Express</h1>
+        <p><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, nemo. Consequatur quod rerum reiciendis,
+          laborum, ex, accusamus atque fugiat dicta aperiam commodi adipisci impedit animi. Non impedit, reprehenderit
+          eius dolor.</strong></p>
+      </div>
+</div>
+<br></br>
 <form method="POST">
-  <h3 align="center">Login</h3>
+  <h3 align="left">Login</h3>
   <div class="form-group">
     <label for="email_addr">Email Address</label>
     <input
@@ -12,6 +24,15 @@
       placeholder="Enter email"
     />
   </div>
+    <div class="form-group">
+      <label class="mr-sm-2" for="inlineFormCustomSelect">User Type</label>
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <option selected>Choose...</option>
+        <option value="1">User</option>
+        <option value="2">Health Expert</option>
+        <option value="3">Chef</option>
+      </select>
+    </div>
   <div class="form-group">
     <label for="password">Password</label>
     <input
