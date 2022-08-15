@@ -1,7 +1,39 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content%}
-<div id = "body_header"><h1 align="left">Hello,<h2 align="left">Welcome to the Food Express</h2></h1>
-
-
+<div id="body_header">
+    <h1 align="left">Hello User,Welcome to the Food Express</h1>
 </div>
-
+<table class="key-value-table" summary="User Details">
+    <caption>User Details.</caption>
+    <tbody>
+    <tr>
+        <th class="width-20">Name:</th>
+        <td>John Doe</td>
+    </tr>
+    <tr>
+        <th>Address:</th>
+        <td>123 Fake St.<br>Albany NY, 12202</td>
+    </tr>
+    </tbody>
+</table>
+<table class="key-value-table" summary="User Taste Form Details">
+    <caption>User Taste Form Details.</caption>
+    <tbody>
+    <tr>
+        <th class="width-20">Cuisine:</th>
+        <td>Chinese, Italian</td>
+    </tr>
+    <tr>
+        <th>Dish Description:</th>
+        <td>Well Cooked, pizzas properly baked</td>
+    </tr>
+    <tr>
+        <th>Vegetables Description:</th>
+        <td>Okra, beans, lettuce</td>
+    </tr>
+    <tr>
+        <th>Fruits Description:</th>
+        <td>Orange, Apple, Watermelon</td>
+    </tr>
+    </tbody>
+</table>
 {% endblock %}

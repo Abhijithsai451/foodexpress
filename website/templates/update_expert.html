@@ -1,0 +1,71 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content%}
+<div id="body_header">
+    <h1 align="left">Hello Health Expert,Welcome to the Food Express</h1>
+</div>
+<form method="POST">
+    <h3 align="left">Health Expert Profile</h3>
+    <div class="form-group">
+        <label for="first_name">First Name </label>
+        <input
+                type="first_name"
+                class="form-control"
+                id="first_name"
+                name="first_name"
+                placeholder="Enter First Name "
+        />
+    </div>
+    <div class="form-group">
+        <label for="last_name">Last Name </label>
+        <input
+                type="last_name"
+                class="form-control"
+                id="last_name"
+                name="last_name"
+                placeholder="Enter Last Name "
+        />
+    </div>
+    <div class="form-group">
+        <label for="age">Age </label>
+        <input
+                type="age"
+                class="form-control"
+                id="age"
+                name="age"
+                placeholder="Enter Age"
+        />
+    </div>
+    <div class="form-group">
+        <label for="join_date">Join Date </label>
+        <input
+                type="join_date"
+                class="form-control"
+                id="join_date"
+                name="join_date"
+                placeholder="Enter Join Date"
+        />
+    </div>
+    <div class="form-group">
+        <label for="expertise">expertise </label>
+        <input
+                type="expertise"
+                class="form-control"
+                id="expertise"
+                name="expertise"
+                placeholder="Enter expertise"
+        />
+    </div>
+    <div class="form-group">
+        <label for="fruits_description">fruits_description </label>
+        <input
+                type="fruits_description"
+                class="form-control"
+                id="fruits_description"
+                name="fruits_description"
+                placeholder="Enter fruits_description"
+        />
+    </div>
+
+    <button type="button">Update</button>
+</form>
+
+{% endblock %}

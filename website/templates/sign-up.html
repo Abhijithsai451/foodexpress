@@ -1,7 +1,19 @@
 {% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block
 content %}
+<img class='image' src="/static/food.jpeg" style="
+
+"/>
+<div class="content">
+      <div class="box">
+        <h1>Food Express</h1>
+        <p><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, nemo. Consequatur quod rerum reiciendis,
+          laborum, ex, accusamus atque fugiat dicta aperiam commodi adipisci impedit animi. Non impedit, reprehenderit
+          eius dolor.</strong></p>
+      </div>
+</div>
+<br></br>
 <form method="POST">
-  <h3 align="center">Sign Up</h3>
+  <h3 align="left">Sign Up</h3>
   <div class="form-group">
     <label for="email_addr">Email Address</label>
     <input
@@ -22,6 +34,15 @@ content %}
       placeholder="Enter first name"
     />
   </div>
+  <div class="form-group">
+      <label class="mr-sm-2" for="user_type">User Type</label>
+      <select class="form-control" id="user_type" name="user_type">
+        <option selected>Choose...</option>
+        <option value="1">User</option>
+        <option value="2">Health Expert</option>
+        <option value="3">Chef</option>
+      </select>
+    </div>
   <div class="form-group">
     <label for="password1">Password</label>
     <input

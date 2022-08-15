@@ -13,19 +13,18 @@ def login():
     if request.method == 'POST':
         email = request.form.get('email_addr')
         password = request.form.get('password')
-
-        user = Login.query.filter_by(email_addr=email).first()
-        if user:
-            if user.password ==  password:
+        login = Login.query.filter_by(email_addr=email).first()
+        if login:
+            if login.password == password:
                 flash('Logged in successfully!', category='success')
-                login_user(user,remember=True)
-                return redirect(url_for('views.home'))
+                login_user(login,remember=True)
+                return redirect(url_for('views.user_home'))
             else:
                 flash('Incorrect password, try again.', category='error')
         else:
             flash('Email does not exist.', category='error')
 
-    return render_template("login.html", user=current_user)
+    return render_template("login.html", login=current_user)
 
 
 @auth.route('/logout')
@@ -42,7 +41,7 @@ def sign_up():
         first_name = request.form.get('firstName')
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
-
+        user_type = request.form.get('user_type')
         user = Login.query.filter_by(email_addr=email).first()
         if user:
             flash('Email already exists.', category='error')
@@ -55,12 +54,11 @@ def sign_up():
         elif len(password1) < 7:
             flash('Password must be at least 7 characters.', category='error')
         else:
-            new_user = Login(email_addr=email, first_name=first_name, password=generate_password_hash(
-                password1, method='sha256'))
+            new_user = Login(email_addr=email, first_name=first_name, password=password1,user_type = user_type)
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)
             flash('Account created!', category='success')
-            return redirect(url_for('views.home'))
+            return redirect(url_for('views.user_home'))
 
-    return render_template("sign-up.html", user=current_user)
+    return render_template("sign-up.html", login=current_user)
